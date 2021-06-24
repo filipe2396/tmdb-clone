@@ -16,3 +16,5 @@ pt-BR:
       movies: Filmes
       tv_shows: Séries
       people: Pessoas
+    movie_or_tv_show_modal:
+      overview: Sinopse

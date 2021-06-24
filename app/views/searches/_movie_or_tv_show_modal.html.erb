@@ -1,0 +1,43 @@
+<div class="modal fade" id="<%= generate_modal_id(resource) %>" data-resource="<%= resource %>">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="float-start w-25 me-3">
+          <% if resource.poster_path %>
+            <img src="https://image.tmdb.org/t/p/w342/<%= resource.poster_path %>" class="rounded w-100">
+          <% else %>
+            <div class="movie-or-tv-modal-image-placeholder">
+              <%= icon('fas', 'image', class: 'text-black-50 fa-2x') %>
+            </div>
+          <% end %>
+        </div>
+
+        <div>
+          <button type="button" class="btn-close float-end ms-2" data-bs-dismiss="modal"></button>
+
+          <h3>
+            <%= movie_or_tv_show_name(resource) %>
+            <small class="text-muted">(<%= movie_or_tv_show_date(resource)&.strftime('%Y') %>)</small>
+          </h3>
+
+          <div class="d-flex align-items-center my-3">
+            <%= icon('fas', 'star', class: 'fa-lg text-warning me-2') %>
+
+            <div class="movie-or-tv-show-modal-rating">
+              <h5>
+                <%= resource.vote_average %><small class="text-muted">/10</small>
+              </h5>
+
+              <small class="d-block"><%= number_with_delimiter resource.vote_count %></small>
+            </div>
+          </div>
+
+          <% if resource.overview.present? %>
+            <strong><%= t('.overview') %></strong>
+            <p><%= resource.overview %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
