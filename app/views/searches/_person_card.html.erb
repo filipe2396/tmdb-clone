@@ -1,0 +1,18 @@
+<div class="person-item">
+  <div class="person-image-container">
+    <% if resource.profile_path %>
+      <img src="https://image.tmdb.org/t/p/w92/<%= resource.profile_path %>">
+    <% else %>
+      <%= icon('fas', 'user', class: 'text-black-50 fa-2x') %>
+    <% end %>
+  </div>
+
+  <div class="person-content">
+    <h5 class="mb-0"><%= resource.name %></h5>
+
+    <div class="person-known-for">
+      <%= t(".known_for_department.#{resource.known_for_department&.downcase}") %> •
+      <%= resource.known_for.map { |r| r.title || r.name }.join(', ') %>
+    </div>
+  </div>
+</div>

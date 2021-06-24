@@ -1,0 +1,7 @@
+resultElem = document.getElementById('search-results');
+resultElem.innerHTML = '<%= j render_result(@response) %>'
+
+filterElem = document.getElementById('search-filter');
+filterElem.innerHTML = '<%= j render "filter" %>'
+
+history.replaceState({}, '', '<%= request.original_fullpath %>');

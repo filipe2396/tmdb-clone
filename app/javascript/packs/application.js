@@ -6,5 +6,9 @@
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 
+import 'jquery'
+import '@popperjs/core'
+import 'bootstrap'
+
 Rails.start()
 Turbolinks.start()

@@ -1,0 +1,18 @@
+pt-BR:
+  searches:
+    show:
+      search_placeholder: Busque por um filme, série ou pessoa
+      nothing_found: Não foram encontrados resultados que correspondam aos seus critérios de busca.
+    person_card:
+      known_for_department:
+        acting: Atuação
+        directing: Diretor(a)
+        writing: Roteirização
+        production: Produção
+        sound: Sonoplastia
+        crew: Equipe técnica
+    filter:
+      all: Todos
+      movies: Filmes
+      tv_shows: Séries
+      people: Pessoas
