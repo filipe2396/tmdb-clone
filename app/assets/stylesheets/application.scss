@@ -19,3 +19,13 @@ $primary: #032541;
 @import 'bootstrap/scss/bootstrap';
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+.alert {
+  &-alert {
+    @extend .alert-danger;
+  }
+
+  &-notice {
+    @extend .alert-success;
+  }
+}

@@ -1,3 +1,7 @@
+<div class="mb-3 d-flex justify-content-end">
+  <%= link_to t('.new_movie'), new_local_movie_path, class: 'btn btn-primary' %>
+</div>
+
 <% @movies.each do |movie| %>
   <%= render 'movie_or_tv_show_card', resource: movie %>
 <% end %>

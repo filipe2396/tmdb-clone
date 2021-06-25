@@ -1,0 +1,12 @@
+<%= simple_form_for movie, url: movie_form_path(movie), html: { class: 'mb-3' } do |f| %>
+  <%= f.input :tmdb_id %>
+  <%= f.input :title %>
+  <%= f.input :release_date, include_blank: true %>
+  <%= f.input :overview, input_html: { rows: 4 } %>
+  <%= f.input :poster_path %>
+  <%= f.input :vote_average %>
+  <%= f.input :vote_count %>
+
+  <%= f.button :submit, class: 'btn-primary' %>
+  <%= link_to t('.cancel'), local_movies_path, class: 'btn btn-light' %>
+<% end %>

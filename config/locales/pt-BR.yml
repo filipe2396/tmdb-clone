@@ -1,10 +1,43 @@
 pt-BR:
+  activerecord:
+    models:
+      movie:
+        one: Filme
+        other: Filmes
+    attributes:
+      movie:
+        tmdb_id: ID do TMDB
+        title: Título
+        release_date: Data de lançamento
+        overview: Sinopse
+        poster_path: Caminho da imagem
+        vote_average: Média de votos
+        vote_count: Quantidade de votos
   application:
     movie_or_tv_show_modal:
       overview: Sinopse
+      edit: Editar
+      destroy: Excluir
+      destroy_confirm: Você tem certeza que deseja excluir esse filme?
     navigation:
       search: Buscar
       local_movies: Filmes locais
+  local_movies:
+    index:
+      new_movie: Novo filme
+    new:
+      title: Novo filme
+    create:
+      success: Filme salvo com sucesso.
+    edit:
+      title: Editar filme
+    update:
+      success: Filme atualizado com sucesso.
+    destroy:
+      success: Filme excluído com sucesso.
+      failed: Falha ao excluir filme.
+    movie_form:
+      cancel: Cancelar
   searches:
     show:
       search_placeholder: Busque por um filme, série ou pessoa

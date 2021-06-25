@@ -2,7 +2,7 @@
 
 <div class="card movie-or-tv-card">
   <div class="d-flex">
-    <% if resource.poster_path %>
+    <% if resource.poster_path.present? %>
       <img src="https://image.tmdb.org/t/p/w92/<%= resource.poster_path %>" class="img-fluid rounded-start h-100">
     <% else %>
       <div class="movie-or-tv-image-placeholder">

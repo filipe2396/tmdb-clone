@@ -5,7 +5,7 @@
     <div class="modal-content">
       <div class="modal-body">
         <div class="float-start w-25 me-3">
-          <% if resource.poster_path %>
+          <% if resource.poster_path.present? %>
             <img src="https://image.tmdb.org/t/p/w342/<%= resource.poster_path %>" class="rounded w-100">
           <% else %>
             <div class="modal-image-placeholder">
@@ -42,6 +42,18 @@
             <p><%= resource.overview %></p>
           <% end %>
         </div>
+
+        <% if controller_name == 'local_movies' %>
+          <div class="mt-5 d-flex justify-content-end">
+            <%= link_to t('.destroy'),
+              local_movie_path(resource),
+              method: :delete,
+              class: 'btn btn-danger me-1',
+              data: { confirm: t('.destroy_confirm') } %>
+
+            <%= link_to t('.edit'), edit_local_movie_path(resource), class: 'btn btn-primary' %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

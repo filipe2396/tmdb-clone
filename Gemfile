@@ -54,3 +54,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'font-awesome-sass', '~> 5.15.1'
 gem 'httparty', '~> 0.18'
 gem 'rails-i18n', '~> 6.0.0'
+gem 'simple_form', '~> 5.1'
