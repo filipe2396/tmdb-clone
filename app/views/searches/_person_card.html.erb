@@ -8,7 +8,9 @@
   </div>
 
   <div class="person-content">
-    <h5 class="mb-0"><%= resource.name %></h5>
+    <%= link_to 'javascript:;', class: 'text-decoration-none', data: { 'bs-toggle': 'modal', 'bs-target': "##{generate_modal_id(resource)}" } do %>
+        <h5 class="mb-0"><%= resource.name %></h5>
+      <% end %>
 
     <div class="person-known-for">
       <%= t(".known_for_department.#{resource.known_for_department&.downcase}") %> •
@@ -16,3 +18,5 @@
     </div>
   </div>
 </div>
+
+<%= render 'person_modal', resource: resource %>

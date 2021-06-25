@@ -1,0 +1,44 @@
+<div class="modal fade" id="<%= generate_modal_id(resource) %>" data-resource="<%= resource %>">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-body">
+
+        <div class="float-start w-25 me-3">
+          <% if resource.profile_path %>
+            <img src="https://image.tmdb.org/t/p/w342/<%= resource.profile_path %>" class="rounded w-100">
+          <% else %>
+            <div class="modal-image-placeholder">
+              <%= icon('fas', 'image', class: 'text-black-50 fa-2x') %>
+            </div>
+          <% end %>
+        </div>
+
+        <div>
+          <button type="button" class="btn-close float-end ms-2" data-bs-dismiss="modal"></button>
+
+          <h3 class="mb-3"><%= resource.name %></h3>
+          <h6 class="mb-0"><%= t('.gender') %></h6>
+          <p><%= t(".genders.#{resource.gender}") %></p>
+
+          <h6><%= t('.known_for') %></h6>
+
+          <div class="d-flex overflow-auto">
+            <% resource.known_for.each do |media| %>
+              <div class="known-for-item-person-modal">
+                <% if media.poster_path %>
+                  <img src="https://image.tmdb.org/t/p/w154/<%= media.poster_path %>" class="rounded">
+                <% else %>
+                  <div class="modal-image-placeholder">
+                    <%= icon('fas', 'image', class: 'text-black-50 fa-2x') %>
+                  </div>
+                <% end %>
+
+                <small><%= movie_or_tv_show_name(media) %></small>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

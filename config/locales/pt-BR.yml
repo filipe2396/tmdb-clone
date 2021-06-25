@@ -18,3 +18,10 @@ pt-BR:
       people: Pessoas
     movie_or_tv_show_modal:
       overview: Sinopse
+    person_modal:
+      gender: Gênero
+      genders:
+        1: Feminino
+        2: Masculino
+      known_for: Conhecido(a) por
+

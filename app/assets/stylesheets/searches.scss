@@ -98,7 +98,7 @@
   }
 }
 
-.movie-or-tv-modal-image-placeholder {
+.modal-image-placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,4 +118,13 @@
   small {
     font-size: .8rem;
   }
+}
+
+.known-for-item-person-modal {
+  margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 154px;
+  text-align: center;
 }

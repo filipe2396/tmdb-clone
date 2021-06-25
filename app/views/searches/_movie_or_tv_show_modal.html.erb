@@ -6,7 +6,7 @@
           <% if resource.poster_path %>
             <img src="https://image.tmdb.org/t/p/w342/<%= resource.poster_path %>" class="rounded w-100">
           <% else %>
-            <div class="movie-or-tv-modal-image-placeholder">
+            <div class="modal-image-placeholder">
               <%= icon('fas', 'image', class: 'text-black-50 fa-2x') %>
             </div>
           <% end %>
