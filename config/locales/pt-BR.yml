@@ -3,6 +3,7 @@ pt-BR:
     movie_or_tv_show_modal:
       overview: Sinopse
     navigation:
+      search: Buscar
       local_movies: Filmes locais
   searches:
     show:

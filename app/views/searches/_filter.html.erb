@@ -1,15 +1,8 @@
 <div class="list-group">
   <% SearchesHelper::FILTER_ARRAY.each do |label, path| %>
     <%= link_to t(".#{label}"),
-      {
-        controller: :searches,
-        action: :show,
-        media_type: path.delete_prefix('/'),
-        query: params[:query]
-      },
-      {
-        class: "list-group-item list-group-item-action #{'active' if current_filter?(path, params)}",
-        remote: true
-      } %>
+      search_path(media_type: path.delete_prefix('/'), query: params[:query]),
+      class: "list-group-item list-group-item-action #{'active' if current_filter?(path, params)}",
+      remote: true %>
   <% end %>
 </div>
