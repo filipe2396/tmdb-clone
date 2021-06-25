@@ -5,6 +5,8 @@ class TmdbClient
 
   def search(query:, type:)
     req = self.class.get("/search/#{type}", default_options.deep_merge(query: { query: query }))
+
+    SaveMoviesJob.perform_later(req.parsed_response['results'], type)
     parse_response(req.parsed_response)
   end
 
