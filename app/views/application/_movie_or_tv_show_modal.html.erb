@@ -1,3 +1,5 @@
+<% date = movie_or_tv_show_date(resource) %>
+
 <div class="modal fade" id="<%= generate_modal_id(resource) %>">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
@@ -17,7 +19,10 @@
 
           <h3>
             <%= movie_or_tv_show_name(resource) %>
-            <small class="text-muted">(<%= movie_or_tv_show_date(resource)&.strftime('%Y') %>)</small>
+
+            <% if date %>
+              <small class="text-muted">(<%= date.strftime('%Y') %>)</small>
+            <% end %>
           </h3>
 
           <div class="d-flex align-items-center my-3">

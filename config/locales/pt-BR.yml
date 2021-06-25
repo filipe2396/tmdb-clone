@@ -1,4 +1,9 @@
 pt-BR:
+  application:
+    movie_or_tv_show_modal:
+      overview: Sinopse
+    navigation:
+      local_movies: Filmes locais
   searches:
     show:
       search_placeholder: Busque por um filme, série ou pessoa
@@ -16,8 +21,6 @@ pt-BR:
       movies: Filmes
       tv_shows: Séries
       people: Pessoas
-    movie_or_tv_show_modal:
-      overview: Sinopse
     person_modal:
       gender: Gênero
       genders:

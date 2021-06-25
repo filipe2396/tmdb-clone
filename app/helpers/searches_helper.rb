@@ -29,17 +29,4 @@ module SearchesHelper
     filter.delete_prefix!('/')
     filter == params[:media_type] || params[:media_type].blank? && filter == ''
   end
-
-  def generate_modal_id(resource)
-    "#{resource.media_type || params[:media_type]}-#{resource.id}"
-  end
-
-  def movie_or_tv_show_name(resource)
-    resource.title || resource.name
-  end
-
-  def movie_or_tv_show_date(resource)
-    date = resource.release_date || resource.first_air_date
-    Date.parse(date) if date.present?
-  end
 end
