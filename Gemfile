@@ -48,6 +48,7 @@ group :test do
   gem 'faker'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 4.5'
+  gem 'simplecov', require: false
   gem 'webdrivers'
   gem 'webmock', '~> 3.13'
 end
