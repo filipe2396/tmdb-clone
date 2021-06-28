@@ -1,4 +1,7 @@
-WebMock.disable_net_connect!(allow_localhost: true)
+allowed_urls = []
+allowed_urls += Webdrivers::Common.subclasses.map(&:base_url) if defined?(Webdrivers)
+
+WebMock.disable_net_connect!(allow_localhost: true, allow: allowed_urls)
 
 RSpec.configure do |config|
   config.before do

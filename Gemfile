@@ -44,7 +44,11 @@ group :development do
 end
 
 group :test do
+  gem 'capybara'
+  gem 'faker'
+  gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 4.5'
+  gem 'webdrivers'
   gem 'webmock', '~> 3.13'
 end
 
