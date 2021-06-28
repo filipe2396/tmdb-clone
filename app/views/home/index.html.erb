@@ -1,0 +1,23 @@
+<%= render 'search_input' %>
+
+<h5 class="my-4"><%= t('.recent_movies') %></h5>
+
+<div class="recent-movies-container">
+  <% @last_movies.each do |movie| %>
+    <%= link_to_resource_modal(movie) do %>
+      <div class="recent-movies-content">
+        <% if movie.poster_path.present? %>
+          <img src="https://image.tmdb.org/t/p/w154/<%= movie.poster_path %>" class="rounded">
+        <% else %>
+          <div class="poster-placeholder">
+            <%= icon('fas', 'image', class: 'text-black-50 fa-2x') %>
+          </div>
+        <% end %>
+
+        <small><%= movie.title %></small>
+      </div>
+    <% end %>
+
+    <%= render 'movie_or_tv_show_modal', resource: movie %>
+  <% end %>
+</div>

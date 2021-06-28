@@ -26,6 +26,8 @@ pt-BR:
       search: Buscar
       local_movies: Filmes locais
       logout: Sair
+    search_input:
+      placeholder: Busque por um filme, série ou pessoa
   local_movies:
     index:
       new_movie: Novo filme
@@ -47,7 +49,6 @@ pt-BR:
       unfavorited: Removido dos favoritos.
   searches:
     show:
-      search_placeholder: Busque por um filme, série ou pessoa
       nothing_found: Não foram encontrados resultados que correspondam aos seus critérios de busca.
     person_card:
       known_for_department:
@@ -71,4 +72,7 @@ pt-BR:
   favorites:
     show:
       no_favorites: Você ainda não adicionou nenhum filme aos favoritos.
+  home:
+    index:
+      recent_movies: Filmes adicionados recentemente
 

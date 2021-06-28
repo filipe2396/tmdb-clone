@@ -8,9 +8,9 @@
   </div>
 
   <div class="person-content">
-    <%= link_to 'javascript:;', class: 'text-decoration-none', data: { 'bs-toggle': 'modal', 'bs-target': "##{generate_modal_id(resource)}" } do %>
-        <h5 class="mb-0"><%= resource.name %></h5>
-      <% end %>
+    <%= link_to_resource_modal(resource) do %>
+      <h5 class="mb-0"><%= resource.name %></h5>
+    <% end %>
 
     <div class="person-known-for">
       <%= t(".known_for_department.#{resource.known_for_department&.downcase}") %> •
