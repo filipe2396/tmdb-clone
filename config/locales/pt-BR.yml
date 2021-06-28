@@ -22,6 +22,7 @@ pt-BR:
     navigation:
       search: Buscar
       local_movies: Filmes locais
+      logout: Sair
   local_movies:
     index:
       new_movie: Novo filme

@@ -1,21 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>TMDB Clone</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<% provide :content do %>
+  <div class="container-fluid">
+    <%= yield %>
+  </div>
+<% end %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= render 'navigation' %>
-
-    <div class="container-fluid mt-4">
-      <%= render 'flashes' %>
-      <%= yield %>
-    </div>
-  </body>
-</html>
+<%= render template: 'layouts/base' %>

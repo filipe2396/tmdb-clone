@@ -29,3 +29,39 @@ $primary: #032541;
     @extend .alert-success;
   }
 }
+
+.devise-card {
+  max-width: 435px;
+
+  label {
+    @extend .form-label;
+  }
+
+  input {
+    &[type="email"], &[type="password"] {
+      @extend .form-control;
+    }
+
+    &[type="submit"] {
+      @extend .btn, .btn-primary;
+    }
+
+    &[type="checkbox"] {
+      @extend .form-check-input;
+    }
+  }
+
+  .field, .actions {
+    @extend .mb-3;
+  }
+
+  .field {
+    em {
+      @extend .form-text;
+    }
+  }
+
+  h2 {
+    @extend .h5, .mb-4;
+  }
+}

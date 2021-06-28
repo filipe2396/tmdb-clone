@@ -1,0 +1,11 @@
+<% provide :content do %>
+  <div class="container mt-4">
+    <div class="card devise-card m-auto">
+      <div class="card-body">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= render template: 'layouts/base' %>
