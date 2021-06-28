@@ -14,6 +14,8 @@
           </a>
 
           <ul class="dropdown-menu dropdown-menu-end position-absolute">
+            <%= link_to t('.favorites'), favorites_path, class: 'dropdown-item' %>
+            <hr class="dropdown-divider">
             <%= link_to t('.logout'), destroy_user_session_path, class: 'dropdown-item' %>
           </ul>
         </li>

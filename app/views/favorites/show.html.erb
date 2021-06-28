@@ -1,0 +1,7 @@
+<% if @favorites.any? %>
+  <% @favorites.each do |movie| %>
+    <%= render 'movie_or_tv_show_card', resource: movie %>
+  <% end %>
+<% else %>
+  <%= t('.no_favorites') %>
+<% end %>

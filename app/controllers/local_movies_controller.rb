@@ -1,5 +1,6 @@
 class LocalMoviesController < ApplicationController
-  before_action :set_movie, only: %i[edit update destroy]
+  before_action :authenticate_user!, only: :favorite
+  before_action :set_movie, only: %i[edit update destroy favorite]
 
   def index
     @movies = Movie.all.order(created_at: :desc)
@@ -37,6 +38,19 @@ class LocalMoviesController < ApplicationController
     end
 
     redirect_to local_movies_path, **options
+  end
+
+  def favorite
+    case params[:type]
+    when 'favorite'
+      current_user.favorites << @movie
+      flash.notice = t('.favorited')
+    when 'unfavorite'
+      current_user.favorites.delete(@movie)
+      flash.notice = t('.unfavorited')
+    end
+
+    redirect_back fallback_location: favorites_path
   end
 
   private

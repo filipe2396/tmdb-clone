@@ -25,7 +25,8 @@
             <% end %>
           </h3>
 
-          <div class="d-flex align-items-center my-3">
+        <div class="d-flex align-items-center">
+          <div class="d-flex align-items-center my-3 me-4">
             <%= icon('fas', 'star', class: 'fa-lg text-warning me-2') %>
 
             <div class="movie-or-tv-show-modal-rating">
@@ -36,6 +37,9 @@
               <small class="d-block"><%= number_with_delimiter resource.vote_count %></small>
             </div>
           </div>
+
+          <%= favorite_icon(resource) if resource.is_a?(Movie) %>
+        </div>
 
           <% if resource.overview.present? %>
             <strong><%= t('.overview') %></strong>

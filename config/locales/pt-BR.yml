@@ -19,7 +19,10 @@ pt-BR:
       edit: Editar
       destroy: Excluir
       destroy_confirm: Você tem certeza que deseja excluir esse filme?
+      favorite: Adicionar aos favoritos
+      unfavorite: Remover dos favoritos
     navigation:
+      favorites: Favoritos
       search: Buscar
       local_movies: Filmes locais
       logout: Sair
@@ -39,6 +42,9 @@ pt-BR:
       failed: Falha ao excluir filme.
     movie_form:
       cancel: Cancelar
+    favorite:
+      favorited: Adicionado aos favoritos.
+      unfavorited: Removido dos favoritos.
   searches:
     show:
       search_placeholder: Busque por um filme, série ou pessoa
@@ -62,4 +68,7 @@ pt-BR:
         1: Feminino
         2: Masculino
       known_for: Conhecido(a) por
+  favorites:
+    show:
+      no_favorites: Você ainda não adicionou nenhum filme aos favoritos.
 

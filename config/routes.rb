@@ -7,5 +7,9 @@ Rails.application.routes.draw do
 
   get 'search(/:media_type)', to: 'searches#show', as: :search
 
-  resources :local_movies, except: :show
+  resources :local_movies, except: :show do
+    post :favorite, on: :member
+  end
+
+  resource :favorites, only: :show
 end
