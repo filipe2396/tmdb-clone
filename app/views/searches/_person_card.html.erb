@@ -12,10 +12,12 @@
       <h5 class="mb-0"><%= resource.name %></h5>
     <% end %>
 
-    <div class="person-known-for">
-      <%= t(".known_for_department.#{resource.known_for_department&.downcase}") %> •
-      <%= resource.known_for.map { |r| r.title || r.name }.join(', ') %>
-    </div>
+    <% if resource.known_for_department %>
+      <div class="person-known-for">
+        <%= t(".known_for_department.#{resource.known_for_department.downcase}") %> •
+        <%= resource.known_for.map { |r| r.title || r.name }.join(', ') %>
+      </div>
+    <% end %>
   </div>
 </div>
 
