@@ -12,9 +12,9 @@ module SearchesHelper
     ['people', '/person']
   ].freeze
 
-  def render_result(response)
-    if response.results&.any?
-      safe_join(response.results.map { |resource| render_resource_card(resource, params) })
+  def render_result(results)
+    if results&.any?
+      safe_join(results.map { |resource| render_resource_card(resource, params) })
     else
       t('.nothing_found')
     end

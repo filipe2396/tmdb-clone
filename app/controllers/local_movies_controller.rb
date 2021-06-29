@@ -3,7 +3,7 @@ class LocalMoviesController < ApplicationController
   before_action :set_movie, only: %i[edit update destroy favorite]
 
   def index
-    @movies = Movie.all.order(created_at: :desc)
+    @movies = Movie.all.order(created_at: :desc).page(params[:page])
   end
 
   def new

@@ -6,9 +6,12 @@ RSpec.describe TmdbClient do
   describe '#search' do
     subject(:search) { service.search(query: 'Bradley', type: :multi) }
 
-    it 'deeply transform values into an object' do
-      expect(search).to be_a OpenStruct
-      expect(search.results[0]).to be_a OpenStruct
+    it 'paginates the result' do
+      expect(search).to respond_to(:current_page, :total_pages, :limit_value)
+    end
+
+    it 'transform values into an object' do
+      expect(search[0]).to be_a OpenStruct
     end
   end
 end

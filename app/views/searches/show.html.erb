@@ -9,7 +9,11 @@
 
   <div class="col-md-9">
     <div id="search-results">
-      <%= render_result(@response) %>
+      <%= render_result(@results) %>
+    </div>
+
+    <div id="paginator" class="d-flex justify-content-center">
+      <%= paginate @results %>
     </div>
   </div>
 </div>

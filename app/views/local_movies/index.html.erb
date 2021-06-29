@@ -5,3 +5,7 @@
 <% @movies.each do |movie| %>
   <%= render 'movie_or_tv_show_card', resource: movie %>
 <% end %>
+
+<div class="d-flex justify-content-center">
+  <%= paginate @movies %>
+</div>

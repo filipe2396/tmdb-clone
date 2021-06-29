@@ -3,11 +3,15 @@ class TmdbClient
 
   base_uri 'api.themoviedb.org/3'
 
-  def search(query:, type:)
-    req = self.class.get("/search/#{type}", default_options.deep_merge(query: { query: query }))
+  def search(query:, type:, page: 1)
+    req = self.class.get("/search/#{type}", default_options.deep_merge(query: { query: query, page: page }))
+    parsed_response = parse_response(req.parsed_response)
 
     SaveMoviesJob.perform_later(req.parsed_response['results'], type)
-    parse_response(req.parsed_response)
+
+    Kaminari.paginate_array(parsed_response.results || [], total_count: parsed_response.total_results || 0)
+      .page(page)
+      .per(20)
   end
 
   private

@@ -1,7 +1,10 @@
 resultElem = document.getElementById('search-results');
-resultElem.innerHTML = '<%= j render_result(@response) %>'
+resultElem.innerHTML = '<%= j render_result(@results) %>'
 
 filterElem = document.getElementById('search-filter');
 filterElem.innerHTML = '<%= j render "filter" %>'
+
+paginatorElem = document.getElementById('paginator');
+paginatorElem.innerHTML = '<%= j paginate @results %>'
 
 history.replaceState({}, '', '<%= request.original_fullpath %>');
